@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>study_01</title>
-    <url>/2025/01/09/front/stduy/study_01/</url>
-    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br>时间能够静止嘛？<br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
-]]></content>
-      <categories>
-        <category>front</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2025/01/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -31,6 +22,15 @@
     <title>study_02</title>
     <url>/2025/01/09/front/stduy/study_02/</url>
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br>我曾经拥有整个世界，转眼都飘散如烟</p>
+]]></content>
+      <categories>
+        <category>front</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>study_01</title>
+    <url>/2025/01/09/front/stduy/study_01/</url>
+    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br>时间能够静止嘛？<br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
 ]]></content>
       <categories>
         <category>front</category>
