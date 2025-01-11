@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>study_01</title>
+    <url>/2025/01/09/front/stduy/study_01/</url>
+    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br>时间能够静止嘛？<br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
+]]></content>
+      <categories>
+        <category>front</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2025/01/08/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -19,21 +28,68 @@
 ]]></content>
   </entry>
   <entry>
-    <title>study_01</title>
-    <url>/2025/01/09/front/study_01/</url>
-    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br>时间能够静止嘛？<br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
-]]></content>
-      <categories>
-        <category>-front</category>
-      </categories>
-  </entry>
-  <entry>
     <title>study_02</title>
-    <url>/2025/01/09/front/study_02/</url>
+    <url>/2025/01/09/front/stduy/study_02/</url>
     <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br>我曾经拥有整个世界，转眼都飘散如烟</p>
 ]]></content>
       <categories>
-        <category>-front</category>
+        <category>front</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>linux基础</title>
+    <url>/2025/01/10/front/feisu/feisu_first/linux%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a><strong>linux</strong></h2><h6 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a><em>基本命令</em></h6><ul>
+<li>文件目录操作</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示当前目录</span><br><span class="line">pwd # Print Working Directory</span><br><span class="line"></span><br><span class="line"># 列出目录内容</span><br><span class="line">ls # 默认列出当前目录的内容</span><br><span class="line">ls -l # 详细信息（权限、大小、修改时间等）</span><br><span class="line">ls -a # 包括隐藏文件</span><br><span class="line"></span><br><span class="line"># 更改目录</span><br><span class="line">cd /path/to/directory # 切换到指定目录</span><br><span class="line">cd .. # 返回上一级目录</span><br><span class="line">cd ~ # 回到用户主目录</span><br><span class="line"></span><br><span class="line"># 创建目录</span><br><span class="line">mkdir new_dir # 创建一个目录</span><br><span class="line">mkdir -p dir1/dir2 # 递归创建多级目录</span><br><span class="line"></span><br><span class="line"># 删除文件或目录</span><br><span class="line">rm file.txt # 删除文件</span><br><span class="line">rm -r dir # 递归删除目录及内容</span><br><span class="line">rm -i file.txt # 删除前提示确认</span><br><span class="line"></span><br><span class="line"># 拷贝文件或目录</span><br><span class="line">cp file1 file2 # 将 file1 拷贝为 file2</span><br><span class="line">cp -r dir1 dir2 # 递归拷贝目录 dir1 到 dir2</span><br><span class="line"></span><br><span class="line"># 移动或重命名</span><br><span class="line">mv file1 file2 # 将 file1 重命名为 file2 或移动到 file2</span><br><span class="line">mv file /path/to/destination # 移动到目标路径</span><br><span class="line"></span><br><span class="line"># 查看文件内容</span><br><span class="line">cat file.txt # 显示文件内容</span><br><span class="line">more file.txt # 分页显示文件内容</span><br><span class="line">less file.txt # 交互式分页查看文件（支持上下滚动）</span><br><span class="line">head -n 10 file.txt # 查看前 10 行</span><br><span class="line">tail -n 10 file.txt # 查看后 10 行</span><br><span class="line"></span><br><span class="line"># 压缩文件</span><br><span class="line">tar -czvf archive.tar.gz file1 file2 dir1 # 打包并压缩为 gzip 格式</span><br><span class="line">zip -r archive.zip file1 dir1 # 压缩为 zip 格式</span><br><span class="line"></span><br><span class="line"># 解压文件</span><br><span class="line">tar -xzvf archive.tar.gz # 解压 gzip 格式</span><br><span class="line">unzip archive.zip # 解压 zip 格式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文件搜索</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查找文件</span><br><span class="line">find /path -name &quot;filename&quot; # 根据文件名查找</span><br><span class="line">find /path -type d -name &quot;dir_name&quot; # 查找目录</span><br><span class="line">find /path -size +10M # 查找大于 10 MB 的文件</span><br><span class="line"></span><br><span class="line"># 搜索文件内容</span><br><span class="line">grep &quot;keyword&quot; file.txt # 在文件中搜索关键字</span><br><span class="line">grep -r &quot;keyword&quot; /path # 递归搜索关键字</span><br><span class="line">grep -i &quot;keyword&quot; file.txt # 忽略大小写</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>磁盘与目录空间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看磁盘使用情况</span><br><span class="line">df -h # 以人类可读格式显示磁盘使用情况</span><br><span class="line">du -sh dir # 查看目录大小</span><br><span class="line">du -h --max-depth=1 /path # 查看目录下一级目录的大小</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进程&amp;系统&amp;用户管理</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看当前运行的进程</span><br><span class="line">ps -aux # 显示所有进程</span><br><span class="line">top # 动态显示进程运行情况</span><br><span class="line">htop # 类似 top，需单独安装，交互式界面更友好</span><br><span class="line"></span><br><span class="line"># 杀死进程</span><br><span class="line">kill PID # 根据进程 ID 杀死进程</span><br><span class="line">kill -9 PID # 强制杀死进程</span><br><span class="line">pkill name # 根据进程名杀死进程</span><br><span class="line"></span><br><span class="line"># 查看当前登录用户</span><br><span class="line">whoami # 显示当前用户</span><br><span class="line">who # 查看当前登录用户列表</span><br><span class="line"></span><br><span class="line"># 查看系统信息</span><br><span class="line">uname -a # 显示系统内核信息</span><br><span class="line">hostname # 查看主机名</span><br><span class="line">uptime # 查看系统运行时间</span><br><span class="line"></span><br><span class="line"># 添加用户</span><br><span class="line">sudo useradd username # 添加用户</span><br><span class="line">sudo passwd username # 设置用户密码</span><br><span class="line"></span><br><span class="line"># 删除用户</span><br><span class="line">sudo userdel username # 删除用户</span><br><span class="line">sudo userdel -r username # 删除用户及其主目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>网络</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看网络配置</span><br><span class="line">ifconfig # 查看网络接口配置</span><br><span class="line">ip addr # 查看网络地址</span><br><span class="line">ip link show # 查看网络接口状态</span><br><span class="line"></span><br><span class="line"># 测试网络连通性</span><br><span class="line">ping www.google.com # 测试网络连通性</span><br><span class="line">traceroute www.google.com # 跟踪网络路由</span><br><span class="line"></span><br><span class="line"># 查看端口占用</span><br><span class="line">netstat -tuln # 显示所有监听的端口</span><br><span class="line">ss -tuln # 推荐替代 netstat，显示监听端口</span><br><span class="line"></span><br><span class="line"># 下载文件</span><br><span class="line">wget http://example.com/file.txt # 下载文件</span><br><span class="line">curl -O http://example.com/file.txt # 用 curl 下载文件</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>软件管理</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 安装软件（Debian/Ubuntu）</span><br><span class="line">sudo apt update # 更新软件包索引</span><br><span class="line">sudo apt install package_name # 安装软件</span><br><span class="line"></span><br><span class="line"># 卸载软件</span><br><span class="line">sudo apt remove package_name # 删除软件</span><br><span class="line">sudo apt purge package_name # 连配置文件一起删除</span><br><span class="line"></span><br><span class="line"># 安装软件（Red Hat/CentOS）</span><br><span class="line">sudo yum install package_name # 安装软件</span><br><span class="line">sudo yum remove package_name # 卸载软件</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看文件内容和日志</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 查看系统日志</span><br><span class="line">tail -f /var/log/syslog # 实时查看系统日志</span><br><span class="line">cat /var/log/syslog | grep &quot;error&quot; # 搜索日志中的错误信息</span><br><span class="line">journalctl -xe # 查看最近的系统日志</span><br><span class="line"></span><br><span class="line"># 命令历史</span><br><span class="line">history # 显示命令历史</span><br><span class="line">!n # 执行第 n 条历史命令</span><br><span class="line">Ctrl + R # 搜索历史命令</span><br><span class="line"></span><br><span class="line"># 清屏</span><br><span class="line">clear # 清屏</span><br><span class="line">Ctrl + L # 清屏快捷键</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>feisu</category>
+        <category>feisu_first</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React基础</title>
+    <url>/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h2><p><a href="https://zh-hans.react.dev/learna">官方教程文档</a><br/></p>
+<p><a href="https://echarts.apache.org/zh/api.html#echarts">echarts</a><br/></p>
+<p><a href="https://ant.design/components/table-cn">Ant design</a><br/></p>
+]]></content>
+      <categories>
+        <category>feisu</category>
+        <category>feisu_first</category>
       </categories>
   </entry>
 </search>
