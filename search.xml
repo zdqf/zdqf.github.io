@@ -1,117 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/01/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>study_01</title>
-    <url>/2025/01/09/front/stduy/study_01/</url>
-    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br><br>时间能够静止嘛？<br><br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>ECharts基础</title>
+      <link href="/2025/01/14/front/feisu/feisu_first/ECharts%E5%9F%BA%E7%A1%80/"/>
+      <url>/2025/01/14/front/feisu/feisu_first/ECharts%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Echarts-基于javascript的开源图表库"><a href="#Echarts-基于javascript的开源图表库" class="headerlink" title="Echarts-基于javascript的开源图表库"></a>Echarts-基于javascript的开源图表库</h2><ol><li><strong>折线图</strong></li></ol><h5 id="我们一起看下最基础的绘制图标的组件，这里以jsx为例"><a href="#我们一起看下最基础的绘制图标的组件，这里以jsx为例" class="headerlink" title="我们一起看下最基础的绘制图标的组件，这里以jsx为例"></a>我们一起看下最基础的绘制图标的组件，这里以jsx为例</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CustomECharts</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> chartRef = <span class="title function_">useRef</span>(<span class="literal">null</span>); <span class="comment">// 引用 DOM 节点</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 初始化 ECharts 实例</span></span><br><span class="line">    <span class="keyword">const</span> myChart = echarts.<span class="title function_">init</span>(chartRef.<span class="property">current</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 配置选项</span></span><br><span class="line">    <span class="keyword">const</span> options = &#123;</span><br><span class="line">      <span class="attr">title</span>: &#123;</span><br><span class="line">        <span class="attr">text</span>: <span class="string">&quot;直接使用 ECharts 绘制折线图&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">tooltip</span>: &#123;</span><br><span class="line">        <span class="attr">trigger</span>: <span class="string">&quot;axis&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">xAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;category&quot;</span>,</span><br><span class="line">        <span class="attr">data</span>: [<span class="string">&quot;周一&quot;</span>, <span class="string">&quot;周二&quot;</span>, <span class="string">&quot;周三&quot;</span>, <span class="string">&quot;周四&quot;</span>, <span class="string">&quot;周五&quot;</span>, <span class="string">&quot;周六&quot;</span>, <span class="string">&quot;周日&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">yAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;value&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">series</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">name</span>: <span class="string">&quot;访问量&quot;</span>,</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&quot;line&quot;</span>,</span><br><span class="line">          <span class="attr">data</span>: [<span class="number">120</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">80</span>, <span class="number">70</span>, <span class="number">110</span>, <span class="number">130</span>],</span><br><span class="line">          <span class="attr">smooth</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置选项</span></span><br><span class="line">    myChart.<span class="title function_">setOption</span>(options);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清理函数，防止内存泄漏</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      myChart.<span class="title function_">dispose</span>();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);   <span class="comment">//这里依赖项为[]，说明只有组件首次渲染时运行</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;chartRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> &quot;<span class="attr">100</span>%&quot;, <span class="attr">height:</span> <span class="attr">400</span> &#125;&#125; // <span class="attr">设置图表宽高</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>front</category>
+          
+          <category> feisu </category>
+          
+          <category> feisu_first </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>study_02</title>
-    <url>/2025/01/09/front/stduy/study_02/</url>
-    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br><br>我曾经拥有整个世界，转眼都飘散如烟</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux基础</title>
+      <link href="/2025/01/10/front/feisu/feisu_first/linux%E5%9F%BA%E7%A1%80/"/>
+      <url>/2025/01/10/front/feisu/feisu_first/linux%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a><strong>linux</strong></h2><h6 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a><em>基本命令</em></h6><ul><li>文件目录操作</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示当前目录</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment"># Print Working Directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出目录内容</span></span><br><span class="line"><span class="built_in">ls</span> <span class="comment"># 默认列出当前目录的内容</span></span><br><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细信息（权限、大小、修改时间等）</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包括隐藏文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改目录</span></span><br><span class="line"><span class="built_in">cd</span> /path/to/directory <span class="comment"># 切换到指定目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 返回上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ~ <span class="comment"># 回到用户主目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> new_dir <span class="comment"># 创建一个目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p dir1/dir2 <span class="comment"># 递归创建多级目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件或目录</span></span><br><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r <span class="built_in">dir</span> <span class="comment"># 递归删除目录及内容</span></span><br><span class="line"><span class="built_in">rm</span> -i file.txt <span class="comment"># 删除前提示确认</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝文件或目录</span></span><br><span class="line"><span class="built_in">cp</span> file1 file2 <span class="comment"># 将 file1 拷贝为 file2</span></span><br><span class="line"><span class="built_in">cp</span> -r dir1 dir2 <span class="comment"># 递归拷贝目录 dir1 到 dir2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动或重命名</span></span><br><span class="line"><span class="built_in">mv</span> file1 file2 <span class="comment"># 将 file1 重命名为 file2 或移动到 file2</span></span><br><span class="line"><span class="built_in">mv</span> file /path/to/destination <span class="comment"># 移动到目标路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件内容</span></span><br><span class="line"><span class="built_in">cat</span> file.txt <span class="comment"># 显示文件内容</span></span><br><span class="line">more file.txt <span class="comment"># 分页显示文件内容</span></span><br><span class="line">less file.txt <span class="comment"># 交互式分页查看文件（支持上下滚动）</span></span><br><span class="line"><span class="built_in">head</span> -n 10 file.txt <span class="comment"># 查看前 10 行</span></span><br><span class="line"><span class="built_in">tail</span> -n 10 file.txt <span class="comment"># 查看后 10 行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">tar -czvf archive.tar.gz file1 file2 dir1 <span class="comment"># 打包并压缩为 gzip 格式</span></span><br><span class="line">zip -r archive.zip file1 dir1 <span class="comment"># 压缩为 zip 格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">tar -xzvf archive.tar.gz <span class="comment"># 解压 gzip 格式</span></span><br><span class="line">unzip archive.zip <span class="comment"># 解压 zip 格式</span></span><br></pre></td></tr></table></figure><ul><li>文件搜索</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找文件</span></span><br><span class="line">find /path -name <span class="string">&quot;filename&quot;</span> <span class="comment"># 根据文件名查找</span></span><br><span class="line">find /path -<span class="built_in">type</span> d -name <span class="string">&quot;dir_name&quot;</span> <span class="comment"># 查找目录</span></span><br><span class="line">find /path -size +10M <span class="comment"># 查找大于 10 MB 的文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索文件内容</span></span><br><span class="line">grep <span class="string">&quot;keyword&quot;</span> file.txt <span class="comment"># 在文件中搜索关键字</span></span><br><span class="line">grep -r <span class="string">&quot;keyword&quot;</span> /path <span class="comment"># 递归搜索关键字</span></span><br><span class="line">grep -i <span class="string">&quot;keyword&quot;</span> file.txt <span class="comment"># 忽略大小写</span></span><br></pre></td></tr></table></figure><ul><li>磁盘与目录空间</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看磁盘使用情况</span></span><br><span class="line"><span class="built_in">df</span> -h <span class="comment"># 以人类可读格式显示磁盘使用情况</span></span><br><span class="line"><span class="built_in">du</span> -sh <span class="built_in">dir</span> <span class="comment"># 查看目录大小</span></span><br><span class="line"><span class="built_in">du</span> -h --max-depth=1 /path <span class="comment"># 查看目录下一级目录的大小</span></span><br></pre></td></tr></table></figure><ul><li>进程&amp;系统&amp;用户管理</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看当前运行的进程</span></span><br><span class="line">ps -aux <span class="comment"># 显示所有进程</span></span><br><span class="line">top <span class="comment"># 动态显示进程运行情况</span></span><br><span class="line">htop <span class="comment"># 类似 top，需单独安装，交互式界面更友好</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死进程</span></span><br><span class="line"><span class="built_in">kill</span> PID <span class="comment"># 根据进程 ID 杀死进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment"># 强制杀死进程</span></span><br><span class="line">pkill name <span class="comment"># 根据进程名杀死进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前登录用户</span></span><br><span class="line"><span class="built_in">whoami</span> <span class="comment"># 显示当前用户</span></span><br><span class="line"><span class="built_in">who</span> <span class="comment"># 查看当前登录用户列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a <span class="comment"># 显示系统内核信息</span></span><br><span class="line">hostname <span class="comment"># 查看主机名</span></span><br><span class="line"><span class="built_in">uptime</span> <span class="comment"># 查看系统运行时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line"><span class="built_in">sudo</span> useradd username <span class="comment"># 添加用户</span></span><br><span class="line"><span class="built_in">sudo</span> passwd username <span class="comment"># 设置用户密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除用户</span></span><br><span class="line"><span class="built_in">sudo</span> userdel username <span class="comment"># 删除用户</span></span><br><span class="line"><span class="built_in">sudo</span> userdel -r username <span class="comment"># 删除用户及其主目录</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><ul><li>网络</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看网络配置</span></span><br><span class="line">ifconfig <span class="comment"># 查看网络接口配置</span></span><br><span class="line">ip addr <span class="comment"># 查看网络地址</span></span><br><span class="line">ip <span class="built_in">link</span> show <span class="comment"># 查看网络接口状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试网络连通性</span></span><br><span class="line">ping www.google.com <span class="comment"># 测试网络连通性</span></span><br><span class="line">traceroute www.google.com <span class="comment"># 跟踪网络路由</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看端口占用</span></span><br><span class="line">netstat -tuln <span class="comment"># 显示所有监听的端口</span></span><br><span class="line">ss -tuln <span class="comment"># 推荐替代 netstat，显示监听端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载文件</span></span><br><span class="line">wget http://example.com/file.txt <span class="comment"># 下载文件</span></span><br><span class="line">curl -O http://example.com/file.txt <span class="comment"># 用 curl 下载文件</span></span><br></pre></td></tr></table></figure><ul><li>软件管理</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件（Debian/Ubuntu）</span></span><br><span class="line"><span class="built_in">sudo</span> apt update <span class="comment"># 更新软件包索引</span></span><br><span class="line"><span class="built_in">sudo</span> apt install package_name <span class="comment"># 安装软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt remove package_name <span class="comment"># 删除软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt purge package_name <span class="comment"># 连配置文件一起删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装软件（Red Hat/CentOS）</span></span><br><span class="line"><span class="built_in">sudo</span> yum install package_name <span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> yum remove package_name <span class="comment"># 卸载软件</span></span><br></pre></td></tr></table></figure><ul><li>查看文件内容和日志</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看系统日志</span></span><br><span class="line"><span class="built_in">tail</span> -f /var/log/syslog <span class="comment"># 实时查看系统日志</span></span><br><span class="line"><span class="built_in">cat</span> /var/log/syslog | grep <span class="string">&quot;error&quot;</span> <span class="comment"># 搜索日志中的错误信息</span></span><br><span class="line">journalctl -xe <span class="comment"># 查看最近的系统日志</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令历史</span></span><br><span class="line"><span class="built_in">history</span> <span class="comment"># 显示命令历史</span></span><br><span class="line">!n <span class="comment"># 执行第 n 条历史命令</span></span><br><span class="line">Ctrl + R <span class="comment"># 搜索历史命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清屏</span></span><br><span class="line">clear <span class="comment"># 清屏</span></span><br><span class="line">Ctrl + L <span class="comment"># 清屏快捷键</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
       <categories>
-        <category>front</category>
+          
+          <category> feisu </category>
+          
+          <category> feisu_first </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>linux基础</title>
-    <url>/2025/01/10/front/feisu/feisu_first/linux%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a><strong>linux</strong></h2><h6 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a><em>基本命令</em></h6><ul>
-<li>文件目录操作</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示当前目录</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment"># Print Working Directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出目录内容</span></span><br><span class="line"><span class="built_in">ls</span> <span class="comment"># 默认列出当前目录的内容</span></span><br><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细信息（权限、大小、修改时间等）</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包括隐藏文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改目录</span></span><br><span class="line"><span class="built_in">cd</span> /path/to/directory <span class="comment"># 切换到指定目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 返回上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ~ <span class="comment"># 回到用户主目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> new_dir <span class="comment"># 创建一个目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p dir1/dir2 <span class="comment"># 递归创建多级目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件或目录</span></span><br><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r <span class="built_in">dir</span> <span class="comment"># 递归删除目录及内容</span></span><br><span class="line"><span class="built_in">rm</span> -i file.txt <span class="comment"># 删除前提示确认</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝文件或目录</span></span><br><span class="line"><span class="built_in">cp</span> file1 file2 <span class="comment"># 将 file1 拷贝为 file2</span></span><br><span class="line"><span class="built_in">cp</span> -r dir1 dir2 <span class="comment"># 递归拷贝目录 dir1 到 dir2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动或重命名</span></span><br><span class="line"><span class="built_in">mv</span> file1 file2 <span class="comment"># 将 file1 重命名为 file2 或移动到 file2</span></span><br><span class="line"><span class="built_in">mv</span> file /path/to/destination <span class="comment"># 移动到目标路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件内容</span></span><br><span class="line"><span class="built_in">cat</span> file.txt <span class="comment"># 显示文件内容</span></span><br><span class="line">more file.txt <span class="comment"># 分页显示文件内容</span></span><br><span class="line">less file.txt <span class="comment"># 交互式分页查看文件（支持上下滚动）</span></span><br><span class="line"><span class="built_in">head</span> -n 10 file.txt <span class="comment"># 查看前 10 行</span></span><br><span class="line"><span class="built_in">tail</span> -n 10 file.txt <span class="comment"># 查看后 10 行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">tar -czvf archive.tar.gz file1 file2 dir1 <span class="comment"># 打包并压缩为 gzip 格式</span></span><br><span class="line">zip -r archive.zip file1 dir1 <span class="comment"># 压缩为 zip 格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">tar -xzvf archive.tar.gz <span class="comment"># 解压 gzip 格式</span></span><br><span class="line">unzip archive.zip <span class="comment"># 解压 zip 格式</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>文件搜索</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查找文件</span></span><br><span class="line">find /path -name <span class="string">&quot;filename&quot;</span> <span class="comment"># 根据文件名查找</span></span><br><span class="line">find /path -<span class="built_in">type</span> d -name <span class="string">&quot;dir_name&quot;</span> <span class="comment"># 查找目录</span></span><br><span class="line">find /path -size +10M <span class="comment"># 查找大于 10 MB 的文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索文件内容</span></span><br><span class="line">grep <span class="string">&quot;keyword&quot;</span> file.txt <span class="comment"># 在文件中搜索关键字</span></span><br><span class="line">grep -r <span class="string">&quot;keyword&quot;</span> /path <span class="comment"># 递归搜索关键字</span></span><br><span class="line">grep -i <span class="string">&quot;keyword&quot;</span> file.txt <span class="comment"># 忽略大小写</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>磁盘与目录空间</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看磁盘使用情况</span></span><br><span class="line"><span class="built_in">df</span> -h <span class="comment"># 以人类可读格式显示磁盘使用情况</span></span><br><span class="line"><span class="built_in">du</span> -sh <span class="built_in">dir</span> <span class="comment"># 查看目录大小</span></span><br><span class="line"><span class="built_in">du</span> -h --max-depth=1 /path <span class="comment"># 查看目录下一级目录的大小</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>进程&amp;系统&amp;用户管理</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看当前运行的进程</span></span><br><span class="line">ps -aux <span class="comment"># 显示所有进程</span></span><br><span class="line">top <span class="comment"># 动态显示进程运行情况</span></span><br><span class="line">htop <span class="comment"># 类似 top，需单独安装，交互式界面更友好</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死进程</span></span><br><span class="line"><span class="built_in">kill</span> PID <span class="comment"># 根据进程 ID 杀死进程</span></span><br><span class="line"><span class="built_in">kill</span> -9 PID <span class="comment"># 强制杀死进程</span></span><br><span class="line">pkill name <span class="comment"># 根据进程名杀死进程</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看当前登录用户</span></span><br><span class="line"><span class="built_in">whoami</span> <span class="comment"># 显示当前用户</span></span><br><span class="line"><span class="built_in">who</span> <span class="comment"># 查看当前登录用户列表</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看系统信息</span></span><br><span class="line"><span class="built_in">uname</span> -a <span class="comment"># 显示系统内核信息</span></span><br><span class="line">hostname <span class="comment"># 查看主机名</span></span><br><span class="line"><span class="built_in">uptime</span> <span class="comment"># 查看系统运行时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加用户</span></span><br><span class="line"><span class="built_in">sudo</span> useradd username <span class="comment"># 添加用户</span></span><br><span class="line"><span class="built_in">sudo</span> passwd username <span class="comment"># 设置用户密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除用户</span></span><br><span class="line"><span class="built_in">sudo</span> userdel username <span class="comment"># 删除用户</span></span><br><span class="line"><span class="built_in">sudo</span> userdel -r username <span class="comment"># 删除用户及其主目录</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>网络</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看网络配置</span></span><br><span class="line">ifconfig <span class="comment"># 查看网络接口配置</span></span><br><span class="line">ip addr <span class="comment"># 查看网络地址</span></span><br><span class="line">ip <span class="built_in">link</span> show <span class="comment"># 查看网络接口状态</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 测试网络连通性</span></span><br><span class="line">ping www.google.com <span class="comment"># 测试网络连通性</span></span><br><span class="line">traceroute www.google.com <span class="comment"># 跟踪网络路由</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看端口占用</span></span><br><span class="line">netstat -tuln <span class="comment"># 显示所有监听的端口</span></span><br><span class="line">ss -tuln <span class="comment"># 推荐替代 netstat，显示监听端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下载文件</span></span><br><span class="line">wget http://example.com/file.txt <span class="comment"># 下载文件</span></span><br><span class="line">curl -O http://example.com/file.txt <span class="comment"># 用 curl 下载文件</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>软件管理</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装软件（Debian/Ubuntu）</span></span><br><span class="line"><span class="built_in">sudo</span> apt update <span class="comment"># 更新软件包索引</span></span><br><span class="line"><span class="built_in">sudo</span> apt install package_name <span class="comment"># 安装软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt remove package_name <span class="comment"># 删除软件</span></span><br><span class="line"><span class="built_in">sudo</span> apt purge package_name <span class="comment"># 连配置文件一起删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装软件（Red Hat/CentOS）</span></span><br><span class="line"><span class="built_in">sudo</span> yum install package_name <span class="comment"># 安装软件</span></span><br><span class="line"><span class="built_in">sudo</span> yum remove package_name <span class="comment"># 卸载软件</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看文件内容和日志</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统日志</span></span><br><span class="line"><span class="built_in">tail</span> -f /var/log/syslog <span class="comment"># 实时查看系统日志</span></span><br><span class="line"><span class="built_in">cat</span> /var/log/syslog | grep <span class="string">&quot;error&quot;</span> <span class="comment"># 搜索日志中的错误信息</span></span><br><span class="line">journalctl -xe <span class="comment"># 查看最近的系统日志</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令历史</span></span><br><span class="line"><span class="built_in">history</span> <span class="comment"># 显示命令历史</span></span><br><span class="line">!n <span class="comment"># 执行第 n 条历史命令</span></span><br><span class="line">Ctrl + R <span class="comment"># 搜索历史命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 清屏</span></span><br><span class="line">clear <span class="comment"># 清屏</span></span><br><span class="line">Ctrl + L <span class="comment"># 清屏快捷键</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>React基础</title>
+      <link href="/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/"/>
+      <url>/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h2><p><a href="https://zh-hans.react.dev/learna">官方教程文档</a><br/></p><p><a href="https://echarts.apache.org/zh/index.html">echarts</a><br/></p><p><a href="https://ant.design/components/table-cn">Ant design</a><br/></p>]]></content>
+      
+      
       <categories>
-        <category>feisu</category>
-        <category>feisu_first</category>
+          
+          <category> feisu </category>
+          
+          <category> feisu_first </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>React基础</title>
-    <url>/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h2><p><a href="https://zh-hans.react.dev/learna">官方教程文档</a><br/></p>
-<p><a href="https://echarts.apache.org/zh/index.html">echarts</a><br/></p>
-<p><a href="https://ant.design/components/table-cn">Ant design</a><br/></p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>study_01</title>
+      <link href="/2025/01/09/front/stduy/study_01/"/>
+      <url>/2025/01/09/front/stduy/study_01/</url>
+      
+        <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br><br>时间能够静止嘛？<br><br>node，npm，nvm，yarn，git你弄明白了嘛？</p>]]></content>
+      
+      
       <categories>
-        <category>feisu</category>
-        <category>feisu_first</category>
+          
+          <category> front </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>ECharts基础</title>
-    <url>/2025/01/14/front/feisu/feisu_first/ECharts%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="Echarts-基于javascript的开源图表库"><a href="#Echarts-基于javascript的开源图表库" class="headerlink" title="Echarts-基于javascript的开源图表库"></a>Echarts-基于javascript的开源图表库</h2><ol>
-<li><strong>折线图</strong></li>
-</ol>
-<h5 id="我们一起看下最基础的绘制图标的组件，这里以jsx为例"><a href="#我们一起看下最基础的绘制图标的组件，这里以jsx为例" class="headerlink" title="我们一起看下最基础的绘制图标的组件，这里以jsx为例"></a>我们一起看下最基础的绘制图标的组件，这里以jsx为例</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CustomECharts</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> chartRef = <span class="title function_">useRef</span>(<span class="literal">null</span>); <span class="comment">// 引用 DOM 节点</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 初始化 ECharts 实例</span></span><br><span class="line">    <span class="keyword">const</span> myChart = echarts.<span class="title function_">init</span>(chartRef.<span class="property">current</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 配置选项</span></span><br><span class="line">    <span class="keyword">const</span> options = &#123;</span><br><span class="line">      <span class="attr">title</span>: &#123;</span><br><span class="line">        <span class="attr">text</span>: <span class="string">&quot;直接使用 ECharts 绘制折线图&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">tooltip</span>: &#123;</span><br><span class="line">        <span class="attr">trigger</span>: <span class="string">&quot;axis&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">xAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;category&quot;</span>,</span><br><span class="line">        <span class="attr">data</span>: [<span class="string">&quot;周一&quot;</span>, <span class="string">&quot;周二&quot;</span>, <span class="string">&quot;周三&quot;</span>, <span class="string">&quot;周四&quot;</span>, <span class="string">&quot;周五&quot;</span>, <span class="string">&quot;周六&quot;</span>, <span class="string">&quot;周日&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">yAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;value&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">series</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">name</span>: <span class="string">&quot;访问量&quot;</span>,</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&quot;line&quot;</span>,</span><br><span class="line">          <span class="attr">data</span>: [<span class="number">120</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">80</span>, <span class="number">70</span>, <span class="number">110</span>, <span class="number">130</span>],</span><br><span class="line">          <span class="attr">smooth</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置选项</span></span><br><span class="line">    myChart.<span class="title function_">setOption</span>(options);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清理函数，防止内存泄漏</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      myChart.<span class="title function_">dispose</span>();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);   <span class="comment">//这里依赖项为[]，说明只有组件首次渲染时运行</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;chartRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> &quot;<span class="attr">100</span>%&quot;, <span class="attr">height:</span> <span class="attr">400</span> &#125;&#125; // <span class="attr">设置图表宽高</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>study_02</title>
+      <link href="/2025/01/09/front/stduy/study_02/"/>
+      <url>/2025/01/09/front/stduy/study_02/</url>
+      
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br><br>我曾经拥有整个世界，转眼都飘散如烟</p>]]></content>
+      
+      
       <categories>
-        <category>feisu</category>
-        <category>feisu_first</category>
+          
+          <category> front </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title>標籤</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>分類</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2025/01/08/hello-world/"/>
+      <url>/2025/01/08/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+    
+    
+    <entry>
+      <title>標籤</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>分類</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+  
 </search>
