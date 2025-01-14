@@ -19,21 +19,45 @@
 ]]></content>
   </entry>
   <entry>
-    <title>study_02</title>
-    <url>/2025/01/09/front/stduy/study_02/</url>
-    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br>我曾经拥有整个世界，转眼都飘散如烟</p>
+    <title>study_01</title>
+    <url>/2025/01/09/front/stduy/study_01/</url>
+    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br><br>时间能够静止嘛？<br><br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
 ]]></content>
       <categories>
         <category>front</category>
       </categories>
   </entry>
   <entry>
-    <title>study_01</title>
-    <url>/2025/01/09/front/stduy/study_01/</url>
-    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>爱人如养花对不对<br>时间能够静止嘛？<br>node，npm，nvm，yarn，git你弄明白了嘛？</p>
+    <title>study_02</title>
+    <url>/2025/01/09/front/stduy/study_02/</url>
+    <content><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><p>我曾经跨过山和大海，也穿过人山人海<br><br>我曾经拥有整个世界，转眼都飘散如烟</p>
 ]]></content>
       <categories>
         <category>front</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React基础</title>
+    <url>/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h2><p><a href="https://zh-hans.react.dev/learna">官方教程文档</a><br/></p>
+<p><a href="https://echarts.apache.org/zh/index.html">echarts</a><br/></p>
+<p><a href="https://ant.design/components/table-cn">Ant design</a><br/></p>
+]]></content>
+      <categories>
+        <category>feisu</category>
+        <category>feisu_first</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ECharts基础</title>
+    <url>/2025/01/14/front/feisu/feisu_first/ECharts%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="Echarts-基于javascript的开源图表库"><a href="#Echarts-基于javascript的开源图表库" class="headerlink" title="Echarts-基于javascript的开源图表库"></a>Echarts-基于javascript的开源图表库</h2><ol>
+<li><strong>折线图</strong></li>
+</ol>
+<h5 id="我们一起看下最基础的绘制图标的组件，这里以jsx为例"><a href="#我们一起看下最基础的绘制图标的组件，这里以jsx为例" class="headerlink" title="我们一起看下最基础的绘制图标的组件，这里以jsx为例"></a>我们一起看下最基础的绘制图标的组件，这里以jsx为例</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">CustomECharts</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> chartRef = <span class="title function_">useRef</span>(<span class="literal">null</span>); <span class="comment">// 引用 DOM 节点</span></span><br><span class="line"></span><br><span class="line">  <span class="title function_">useEffect</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 初始化 ECharts 实例</span></span><br><span class="line">    <span class="keyword">const</span> myChart = echarts.<span class="title function_">init</span>(chartRef.<span class="property">current</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 配置选项</span></span><br><span class="line">    <span class="keyword">const</span> options = &#123;</span><br><span class="line">      <span class="attr">title</span>: &#123;</span><br><span class="line">        <span class="attr">text</span>: <span class="string">&quot;直接使用 ECharts 绘制折线图&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">tooltip</span>: &#123;</span><br><span class="line">        <span class="attr">trigger</span>: <span class="string">&quot;axis&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">xAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;category&quot;</span>,</span><br><span class="line">        <span class="attr">data</span>: [<span class="string">&quot;周一&quot;</span>, <span class="string">&quot;周二&quot;</span>, <span class="string">&quot;周三&quot;</span>, <span class="string">&quot;周四&quot;</span>, <span class="string">&quot;周五&quot;</span>, <span class="string">&quot;周六&quot;</span>, <span class="string">&quot;周日&quot;</span>],</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">yAxis</span>: &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&quot;value&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">series</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="attr">name</span>: <span class="string">&quot;访问量&quot;</span>,</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&quot;line&quot;</span>,</span><br><span class="line">          <span class="attr">data</span>: [<span class="number">120</span>, <span class="number">200</span>, <span class="number">150</span>, <span class="number">80</span>, <span class="number">70</span>, <span class="number">110</span>, <span class="number">130</span>],</span><br><span class="line">          <span class="attr">smooth</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      ],</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置选项</span></span><br><span class="line">    myChart.<span class="title function_">setOption</span>(options);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清理函数，防止内存泄漏</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      myChart.<span class="title function_">dispose</span>();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;, []);   <span class="comment">//这里依赖项为[]，说明只有组件首次渲染时运行</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">ref</span>=<span class="string">&#123;chartRef&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">width:</span> &quot;<span class="attr">100</span>%&quot;, <span class="attr">height:</span> <span class="attr">400</span> &#125;&#125; // <span class="attr">设置图表宽高</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    &gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>feisu</category>
+        <category>feisu_first</category>
       </categories>
   </entry>
   <entry>
@@ -42,7 +66,7 @@
     <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a><strong>linux</strong></h2><h6 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a><em>基本命令</em></h6><ul>
 <li>文件目录操作</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 显示当前目录</span><br><span class="line">pwd # Print Working Directory</span><br><span class="line"></span><br><span class="line"># 列出目录内容</span><br><span class="line">ls # 默认列出当前目录的内容</span><br><span class="line">ls -l # 详细信息（权限、大小、修改时间等）</span><br><span class="line">ls -a # 包括隐藏文件</span><br><span class="line"></span><br><span class="line"># 更改目录</span><br><span class="line">cd /path/to/directory # 切换到指定目录</span><br><span class="line">cd .. # 返回上一级目录</span><br><span class="line">cd ~ # 回到用户主目录</span><br><span class="line"></span><br><span class="line"># 创建目录</span><br><span class="line">mkdir new_dir # 创建一个目录</span><br><span class="line">mkdir -p dir1/dir2 # 递归创建多级目录</span><br><span class="line"></span><br><span class="line"># 删除文件或目录</span><br><span class="line">rm file.txt # 删除文件</span><br><span class="line">rm -r dir # 递归删除目录及内容</span><br><span class="line">rm -i file.txt # 删除前提示确认</span><br><span class="line"></span><br><span class="line"># 拷贝文件或目录</span><br><span class="line">cp file1 file2 # 将 file1 拷贝为 file2</span><br><span class="line">cp -r dir1 dir2 # 递归拷贝目录 dir1 到 dir2</span><br><span class="line"></span><br><span class="line"># 移动或重命名</span><br><span class="line">mv file1 file2 # 将 file1 重命名为 file2 或移动到 file2</span><br><span class="line">mv file /path/to/destination # 移动到目标路径</span><br><span class="line"></span><br><span class="line"># 查看文件内容</span><br><span class="line">cat file.txt # 显示文件内容</span><br><span class="line">more file.txt # 分页显示文件内容</span><br><span class="line">less file.txt # 交互式分页查看文件（支持上下滚动）</span><br><span class="line">head -n 10 file.txt # 查看前 10 行</span><br><span class="line">tail -n 10 file.txt # 查看后 10 行</span><br><span class="line"></span><br><span class="line"># 压缩文件</span><br><span class="line">tar -czvf archive.tar.gz file1 file2 dir1 # 打包并压缩为 gzip 格式</span><br><span class="line">zip -r archive.zip file1 dir1 # 压缩为 zip 格式</span><br><span class="line"></span><br><span class="line"># 解压文件</span><br><span class="line">tar -xzvf archive.tar.gz # 解压 gzip 格式</span><br><span class="line">unzip archive.zip # 解压 zip 格式</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示当前目录</span></span><br><span class="line"><span class="built_in">pwd</span> <span class="comment"># Print Working Directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出目录内容</span></span><br><span class="line"><span class="built_in">ls</span> <span class="comment"># 默认列出当前目录的内容</span></span><br><span class="line"><span class="built_in">ls</span> -l <span class="comment"># 详细信息（权限、大小、修改时间等）</span></span><br><span class="line"><span class="built_in">ls</span> -a <span class="comment"># 包括隐藏文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改目录</span></span><br><span class="line"><span class="built_in">cd</span> /path/to/directory <span class="comment"># 切换到指定目录</span></span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment"># 返回上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ~ <span class="comment"># 回到用户主目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建目录</span></span><br><span class="line"><span class="built_in">mkdir</span> new_dir <span class="comment"># 创建一个目录</span></span><br><span class="line"><span class="built_in">mkdir</span> -p dir1/dir2 <span class="comment"># 递归创建多级目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件或目录</span></span><br><span class="line"><span class="built_in">rm</span> file.txt <span class="comment"># 删除文件</span></span><br><span class="line"><span class="built_in">rm</span> -r <span class="built_in">dir</span> <span class="comment"># 递归删除目录及内容</span></span><br><span class="line"><span class="built_in">rm</span> -i file.txt <span class="comment"># 删除前提示确认</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 拷贝文件或目录</span></span><br><span class="line"><span class="built_in">cp</span> file1 file2 <span class="comment"># 将 file1 拷贝为 file2</span></span><br><span class="line"><span class="built_in">cp</span> -r dir1 dir2 <span class="comment"># 递归拷贝目录 dir1 到 dir2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动或重命名</span></span><br><span class="line"><span class="built_in">mv</span> file1 file2 <span class="comment"># 将 file1 重命名为 file2 或移动到 file2</span></span><br><span class="line"><span class="built_in">mv</span> file /path/to/destination <span class="comment"># 移动到目标路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看文件内容</span></span><br><span class="line"><span class="built_in">cat</span> file.txt <span class="comment"># 显示文件内容</span></span><br><span class="line">more file.txt <span class="comment"># 分页显示文件内容</span></span><br><span class="line">less file.txt <span class="comment"># 交互式分页查看文件（支持上下滚动）</span></span><br><span class="line"><span class="built_in">head</span> -n 10 file.txt <span class="comment"># 查看前 10 行</span></span><br><span class="line"><span class="built_in">tail</span> -n 10 file.txt <span class="comment"># 查看后 10 行</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩文件</span></span><br><span class="line">tar -czvf archive.tar.gz file1 file2 dir1 <span class="comment"># 打包并压缩为 gzip 格式</span></span><br><span class="line">zip -r archive.zip file1 dir1 <span class="comment"># 压缩为 zip 格式</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压文件</span></span><br><span class="line">tar -xzvf archive.tar.gz <span class="comment"># 解压 gzip 格式</span></span><br><span class="line">unzip archive.zip <span class="comment"># 解压 zip 格式</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>文件搜索</li>
@@ -81,15 +105,13 @@
       </categories>
   </entry>
   <entry>
-    <title>React基础</title>
-    <url>/2025/01/10/front/feisu/feisu_first/React%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="With-the-first-phase-in-Fs"><a href="#With-the-first-phase-in-Fs" class="headerlink" title="With the first phase in Fs"></a>With the first phase in Fs</h1><h2 id="React"><a href="#React" class="headerlink" title="React"></a><strong>React</strong></h2><p><a href="https://zh-hans.react.dev/learna">官方教程文档</a><br/></p>
-<p><a href="https://echarts.apache.org/zh/api.html#echarts">echarts</a><br/></p>
-<p><a href="https://ant.design/components/table-cn">Ant design</a><br/></p>
-]]></content>
-      <categories>
-        <category>feisu</category>
-        <category>feisu_first</category>
-      </categories>
+    <title>分類</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>標籤</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
