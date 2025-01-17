@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>python_base | 紫电青枫</title><meta name="author" content="Logan Song"><meta name="copyright" content="Logan Song"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="article">
+<meta property="og:title" content="python_base">
+<meta property="og:url" content="http://example.com/2025/01/16/feisu/feisu_first/python_base/index.html">
+<meta property="og:site_name" content="紫电青枫">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/image/pingan.jpg">
+<meta property="article:published_time" content="2025-01-16T03:42:40.000Z">
+<meta property="article:modified_time" content="2025-01-16T03:59:44.655Z">
+<meta property="article:author" content="Logan Song">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/pingan.jpg"><link rel="shortcut icon" href="/image/002.png"><link rel="canonical" href="http://example.com/2025/01/16/feisu/feisu_first/python_base/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'python_base',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/image/pingan.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/technology/"><i class="fa-fw fas fa-technology"></i><span> 技术</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/image/zise1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/image/002.png" alt="Logo"><span class="site-name">紫电青枫</span></a><a class="nav-page-title" href="/"><span class="site-name">python_base</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/technology/"><i class="fa-fw fas fa-technology"></i><span> 技术</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">python_base</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-01-16T03:42:40.000Z" title="Created 2025-01-16 11:42:40">2025-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-01-16T03:59:44.655Z" title="Updated 2025-01-16 11:59:44">2025-01-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/feisu/">feisu</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/feisu/feisu-first/">feisu_first</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><html><head></head><body><blockquote>
+<p>基础网址：<br><br><a target="_blank" rel="noopener" href="https://www.python.org/">python官网</a><br><br><a target="_blank" rel="noopener" href="https://pypi.org/project/pip/">pip官网</a><br><br><a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/">pycharm官网</a><br><br><a target="_blank" rel="noopener" href="https://www.pythontab.com/">python中文社区</a><br><br>基础教程：<br><br><a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.9/index.html">官方教程</a><br><br><a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-tutorial.html">菜鸟教程</a><br><br><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/python/index.asp">W3school</a><br><br><a target="_blank" rel="noopener" href="https://www.jmjc.tech/tutorial/python/1">简明教程</a><br><br>机器学习&amp;数据分析： <br><br><a target="_blank" rel="noopener" href="https://numpy.org/doc/stable/">numpy</a><br><br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/docs/user_guide/index.html">pandas</a><br><br><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/">sklearn</a><br><br><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/users/getting_started/">matplotlib</a><br><br><a target="_blank" rel="noopener" href="https://gallery.pyecharts.org/#/Bar/stack_bar_percent">pyecharts</a><br><br><a target="_blank" rel="noopener" href="http://seaborn.pydata.org/">seaborn</a><br><br><a target="_blank" rel="noopener" href="https://tensorflow.google.cn/?hl=zh-cn">Tensorflow</a><br><br><a target="_blank" rel="noopener" href="https://www.paddlepaddle.org.cn/documentation/docs/zh/guides/index_cn.html">飞浆</a><br><br>优质博客：<br><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_78095812/article/details/134829313">算法基本100</a><br><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40025666/article/details/137593762">基本数据结构</a><br></p>
+</blockquote>
+<h3 id="python虚拟机"><a href="#python虚拟机" class="headerlink" title="python虚拟机"></a><em><strong>python虚拟机</strong></em></h3><h5 id="首先我们要搞清楚python依赖的存贮结构"><a href="#首先我们要搞清楚python依赖的存贮结构" class="headerlink" title="首先我们要搞清楚python依赖的存贮结构"></a>首先我们要搞清楚python依赖的存贮结构</h5><ol>
+<li><p>当我们建立的项目没有构建虚拟环境的时候，外部依赖包是使用的默认的 External Libraries，其实其中包都放在<br>  python安装路径下，其中我们使用pip下载的包在 your python location/Lib/site-package 下, 可执行文件（.exe）<br>  都放在  your python location/Scripts/ 下， 例如我们使用命令 <code>pip install pipenv</code> 下载pipenv，就会将<br>  依赖和可执行文件分别放入上述两个路径下</p>
+</li>
+<li><p>当使用虚拟环境来隔离每一个项目所需要的包，目前主流的有三种方式：<br> Virtualenv Environment  –这个就是最基本的通过创建 .venv 方式，将整个依赖环境全部丢在这个文件夹下面<br> Conda Environment  –这个日后补充<br> Pipenv Environment  –这个就是传说中最厉害的包管理工具，你可以理解成py中的maven？ 总之需要先下载pipenv，然后创建环境</p>
+</li>
+</ol>
+<ul>
+<li>有一点十分值得注意，如果我们使用pipenv，默认的虚拟环境会在C：/user/.virtualenv 文件夹下，这样不利于包的拓展C盘会越来越大<br> 可以在系统环境变量中新建一个环境变量 PIPENV_VENV_IN_PROJECT 环境变量，设置值为1，这样整个虚拟环境就被创建到项目文件夹下.venv</li>
+</ul>
+<h3 id="python-pip"><a href="#python-pip" class="headerlink" title="python pip"></a><em><strong>python pip</strong></em></h3><ul>
+<li>检查版本：</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python --version</span><br><span class="line">pip --version</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>pip基本指令<br></p>
+<blockquote>
+<p>安装包：pip install 包名，例如pip install requests。可以指定安装包的版本，如pip install requests==2.23.0。<br><br>升级包：pip install –upgrade 包名，例如pip install –upgrade requests。这将升级已安装的包到最新版本。或者升级自己pip install —upgrade pip。<br><br>列出已安装的包：pip list。这将显示已安装的所有包及其版本号。<br><br>卸载包：pip uninstall 包名，例如pip uninstall requests。这将卸载已安装的包。<br><br>查看包的详细信息：pip show 包名，例如pip show requests。这将显示已安装包的详细信息，包括版本号、依赖关系等。<br><br>下载包但不安装：pip download 包名，例如pip download requests。这将下载已安装包的最新版本到当前目录。<br>安装多个包：pip install 包名1 包名2 …，例如pip install requests numpy。这将同时安装多个包。<br><br>离线安装包：先下载包的tar.gz文件，然后使用pip install 包的路径进行安装，例如pip install /path/to/requests-2.23.0-py3-none-any.whl。这将离线安装已下载的包。一般见于手动安装包的场景<br><br>设置虚拟环境：使用virtualenv命令创建一个独立的虚拟环境，并在该环境中使用pip安装包。这样可以避免不同项目之间的依赖冲突。<br><br>使用requirements文件：将多个包的版本信息写入requirements文件（例如requirements.txt），然后使用pip install -r requirements.txt一次性安装所有依赖项。这将简化包的安装过程并确保所有依赖项的正确版本。<br><br>在使用pip时，可以根据需要选择合适的镜像源和命令来满足需求。同时，为了确保代码的可移植性和避免依赖冲突，建议在项目中使用requirements文件来管理依赖项。<br></p>
+</blockquote>
+</li>
+<li><p>手动下包<br><br>在浏览器中访问<a target="_blank" rel="noopener" href="https://pypi.org/%EF%BC%8C%E6%90%9C%E7%B4%A2%E6%82%A8%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85%EF%BC%8C%E6%89%BE%E5%88%B0%E9%80%82%E5%90%88%E6%82%A8%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%89%88%E6%9C%AC%EF%BC%8C%E4%B8%8B%E8%BD%BDwhl%E6%96%87%E4%BB%B6%EF%BC%88Windows%EF%BC%89%E6%88%96tar.gz%E6%96%87%E4%BB%B6%EF%BC%88Linux/macOS%EF%BC%89%E3%80%82%E7%84%B6%E5%90%8E%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%EF%BC%9A">https://pypi.org/，搜索您要安装的包，找到适合您系统的版本，下载whl文件（Windows）或tar.gz文件（Linux/macOS）。然后使用以下命令手动安装：</a></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Windows:</span><br><span class="line">pip install 包名-版本号.whl</span><br><span class="line">Linux/macOS:</span><br><span class="line">pip install 包名-版本号.tar.gz</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>镜像源设置<br><blockquote>
+<p>清华大学的镜像源：<a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br><br>阿里云：<a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br><br>中国科技大学：<a target="_blank" rel="noopener" href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>&nbsp;<em>Windows 系统</em><br><br>在资源管理器地址栏中输入 %APPDATA%，回车后进入该目录，新建一个名为 pip 的文件夹，在 pip 文件夹中新建一个 pip.ini 文件。<br>在 pip.ini 文件中输入以下内容：</li>
+</ol>
+<figure class="highlight txt"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">   index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">   trusted-host = pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>&nbsp;<em>linux 系统</em><br><br>打开终端，在用户主目录下创建&nbsp;<code>.pip</code>&nbsp;目录（如果不存在的话），命令为&nbsp;<code>mkdir ~/.pip</code><br>在&nbsp;<code>.pip</code>&nbsp;目录下创建&nbsp;<code>pip.conf</code>&nbsp;文件，命令为&nbsp;<code>touch ~/.pip/pip.conf</code><br>使用文本编辑器打开&nbsp;<code>pip.conf</code>&nbsp;文件:</li>
+</ol>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .pip</span><br><span class="line">vim pip.conf</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">   index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">   trusted-host = pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></tbody></table></figure>
+
+</body></html></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Logan Song</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2025/01/16/feisu/feisu_first/python_base/">http://example.com/2025/01/16/feisu/feisu_first/python_base/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/image/pingan.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/01/16/feisu/feisu_first/python_s1/" title="python_s1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">python_s1</div></div><div class="info-2"><div class="info-item-1">四大基础数据结构 列表(List)列表是最常用的数据结构之一，它是一个有序的元素集合，可以存储任意类型的元素，并且允许重复。可变性：列表是可变的，意味着可以在列表创建后添加、删除或修改其中的元素。索引：列表中的每个元素都有一个对应的索引，从0开始计数。  12345678910111213141516171819202122232425262728293031323334353637383940414243# 学生名单和成绩列表students = ["Alice", "Bob", "Charlie"]scores = [90, 85, 88]# 添加新学生（David，成绩92）students.append("David")  # 添加新学生scores.append(92)  # 添加新学生的成绩# 修改某个学生的成绩（修改Bob的成绩为87）scores[1] = 87  # 通过索引修改Bob的成绩# 删除学生（删除Alice及其成绩）del students[0]  # 删除列表中的第一个学生（Alice）del scores[0]  # 删除Alice的成绩#...</div></div></div></a><a class="pagination-related" href="/2025/01/15/feisu/feisu_first/git-study/" title="git-study"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">git-study</div></div><div class="info-2"><div class="info-item-1"> init初始化本地仓库 -&gt; add提交到暂存区 -&gt; commit将暂存区文件提交到本地仓库 -&gt; push提交到远程仓库   接触git之前我们首先要搞清楚基本的三个概念：“工作区”和“暂存区”和“本地仓库” 工作区 是你当前项目的文件夹，它包含了你正在开发的所有文件。这里的文件就是你实际在编辑、修改的文件。工作区的文件是你直接操作的文件，它们的状态可以是修改过的（但未提交），或者是新添加的文件。 暂存区 是一个缓存区，也叫做索引（Index）。它是一个在本地仓库和工作区之间的临时区域，用来存放你希望在下一次提交中包括的文件。当你修改了工作区中的文件并准备提交时，首先需要将这些文件添加到暂存区。Git通过暂存区来决定哪些修改会被提交到版本历史中。 本地仓库 是存储版本历史的地方，提交的记录都保存在这里。你通过 git commit 命令将暂存区的文件提交到本地仓库  回滚到上一次提交（不保留当前修改）：git reset --hard HEAD~1 仅回滚暂存区，不影响工作区（保留当前修改）：git reset HEAD~1如果想把所有文件都未 add...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/image/pingan.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Logan Song</div><div class="author-info-description">日拱一卒无有尽，功不唐捐终入海</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#python%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">1.</span> <span class="toc-text">python虚拟机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%88%91%E4%BB%AC%E8%A6%81%E6%90%9E%E6%B8%85%E6%A5%9Apython%E4%BE%9D%E8%B5%96%E7%9A%84%E5%AD%98%E8%B4%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.0.1.</span> <span class="toc-text">首先我们要搞清楚python依赖的存贮结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-pip"><span class="toc-number">2.</span> <span class="toc-text">python pip</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/16/feisu/feisu_first/python_s1/" title="python_s1">python_s1</a><time datetime="2025-01-16T09:42:40.000Z" title="Created 2025-01-16 17:42:40">2025-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/16/feisu/feisu_first/python_base/" title="python_base">python_base</a><time datetime="2025-01-16T03:42:40.000Z" title="Created 2025-01-16 11:42:40">2025-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/15/feisu/feisu_first/git-study/" title="git-study">git-study</a><time datetime="2025-01-15T09:42:40.000Z" title="Created 2025-01-15 17:42:40">2025-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/15/feisu/feisu_first/Problem&amp;Slove/" title="Problem&amp;Slove">Problem&amp;Slove</a><time datetime="2025-01-15T07:39:46.000Z" title="Created 2025-01-15 15:39:46">2025-01-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/15/algorithm/dp_1/" title="dp_1">dp_1</a><time datetime="2025-01-15T02:53:40.000Z" title="Created 2025-01-15 10:53:40">2025-01-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By Logan Song</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
